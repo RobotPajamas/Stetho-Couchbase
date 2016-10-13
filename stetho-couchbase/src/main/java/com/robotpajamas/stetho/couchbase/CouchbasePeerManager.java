@@ -59,7 +59,6 @@ class CouchbasePeerManager extends ChromePeerManager {
         setListener(new PeerRegistrationListener() {
             @Override
             public void onPeerRegistered(JsonRpcPeer peer) {
-                Timber.e("onPeerRegistered");
                 setupPeer(peer);
             }
 
@@ -71,10 +70,9 @@ class CouchbasePeerManager extends ChromePeerManager {
     }
 
     private void setupPeer(JsonRpcPeer peer) {
-        Timber.e("setupPeer");
         List<String> potentialDatabases = mManager.getAllDatabaseNames();
         for (String database : potentialDatabases) {
-            Timber.e("File: %s", database);
+            Timber.d("Datebase Name: %s", database);
             Database.DatabaseObject databaseParams = new Database.DatabaseObject();
             databaseParams.id = database;
             databaseParams.name = database;
