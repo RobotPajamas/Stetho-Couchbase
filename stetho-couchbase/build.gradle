@@ -81,5 +81,5 @@ dependencies {
 // Raw Github returning a 500 error for the install file - made local
 //apply from: 'https://raw.githubusercontent.com/sureshjoshi/JCenter/master/installv1.gradle'
 //apply from: 'https://raw.githubusercontent.com/sureshjoshi/JCenter/master/bintrayv1.gradle'
-//apply from: '../jcenter/installv1.gradle'
-//apply from: '../jcenter/bintrayv1.gradle'
+apply from: '../jcenter/installv1.gradle'
+apply from: '../jcenter/bintrayv1.gradle'
