@@ -132,7 +132,6 @@ class CouchbasePeerManager extends ChromePeerManager {
             response.values.add(entry.getKey());
             response.values.add(entry.getValue());
         }
-        response.values = new ArrayList<>(map.values());
 
         // Log to console
         CLog.writeToConsole(Console.MessageLevel.DEBUG, Console.MessageSource.JAVASCRIPT, new JSONObject(map).toString(4));
