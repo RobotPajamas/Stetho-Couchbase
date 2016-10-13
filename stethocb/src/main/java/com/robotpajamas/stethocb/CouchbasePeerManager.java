@@ -31,6 +31,7 @@ import java.util.regex.Pattern;
 import timber.log.Timber;
 
 // TODO: Check support for ForestDB
+// TODO: See if opening/closing of managers/database can be optimized
 class CouchbasePeerManager extends ChromePeerManager {
 
     private static final String DOC_PATTERN = "\"(.*?)\"";
@@ -93,11 +94,13 @@ class CouchbasePeerManager extends ChromePeerManager {
 
         DatabaseOptions databaseOptions = new DatabaseOptions();
         databaseOptions.setReadOnly(true);
+
+        com.couchbase.lite.Database database = null;
         try {
             // TODO: Create LiveQuery on this?
             // TODO: Open manager/database and cache result - could be expensive operation
             Manager manager = new Manager(new AndroidContext(mContext), managerOptions);
-            com.couchbase.lite.Database database = manager.openDatabase(databaseId, databaseOptions);
+            database = manager.openDatabase(databaseId, databaseOptions);
 
             List<String> docIds = new ArrayList<>();
             QueryEnumerator result = database.createAllDocumentsQuery().run();
@@ -109,6 +112,10 @@ class CouchbasePeerManager extends ChromePeerManager {
             return docIds;
         } catch (Exception e) {
             return Collections.emptyList();
+        } finally {
+            if (database != null) {
+                database.close();
+            }
         }
     }
 
@@ -144,8 +151,10 @@ class CouchbasePeerManager extends ChromePeerManager {
         Timber.d("getDocument: %s, %s", databaseId, docId);
         DatabaseOptions databaseOptions = new DatabaseOptions();
         databaseOptions.setReadOnly(true);
+        com.couchbase.lite.Database database = null;
+
         try {
-            com.couchbase.lite.Database database = mManager.openDatabase(databaseId, databaseOptions);
+            database = mManager.openDatabase(databaseId, databaseOptions);
             Document doc = database.getExistingDocument(docId);
             if (doc == null) {
                 return new TreeMap<>();
@@ -159,6 +168,10 @@ class CouchbasePeerManager extends ChromePeerManager {
         } catch (Exception e) {
             Timber.e(e.toString());
             return new TreeMap<>();
+        } finally {
+            if (database != null) {
+                database.close();
+            }
         }
     }
 }
