@@ -1,6 +1,6 @@
 # Stetho-Couchbase
 
-Stetho-Couchbase is a plugin for Stetho to enable visualizing and debugging Android Couchbase databases in Chrome
+Stetho-Couchbase is a plugin for Stetho to enable visualizing and debugging Android Couchbase databases in Chrome. More details can be found here: http://www.sureshjoshi.com/mobile/visualizing-couchbase-chrome-stetho/
 
 ## Usage
 
