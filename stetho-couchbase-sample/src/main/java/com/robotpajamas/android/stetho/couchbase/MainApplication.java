@@ -1,4 +1,4 @@
-package com.robotpajamas.android.stethocb;
+package com.robotpajamas.android.stetho.couchbase;
 
 import android.app.Application;
 import android.content.Context;
@@ -8,7 +8,7 @@ import com.couchbase.lite.Document;
 import com.couchbase.lite.Manager;
 import com.couchbase.lite.android.AndroidContext;
 import com.facebook.stetho.Stetho;
-import com.robotpajamas.stethocb.CouchbaseInspectorModulesProvider;
+import com.robotpajamas.stetho.couchbase.CouchbaseInspectorModulesProvider;
 
 import java.util.HashMap;
 import java.util.Map;

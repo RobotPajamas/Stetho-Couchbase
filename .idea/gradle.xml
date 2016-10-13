@@ -8,8 +8,8 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/stethocb" />
-            <option value="$PROJECT_DIR$/stethocb-sample" />
+            <option value="$PROJECT_DIR$/stetho-couchbase" />
+            <option value="$PROJECT_DIR$/stetho-couchbase-sample" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

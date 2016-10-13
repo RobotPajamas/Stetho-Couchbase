@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.robotpajamas.stethocb">
+    package="com.robotpajamas.stetho.couchbase">
 
     <application
         android:label="@string/app_name"

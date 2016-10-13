@@ -1,4 +1,4 @@
-package com.robotpajamas.stethocb;
+package com.robotpajamas.stetho.couchbase;
 
 import android.content.Context;
 

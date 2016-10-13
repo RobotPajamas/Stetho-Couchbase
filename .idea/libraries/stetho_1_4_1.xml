@@ -1,12 +1,12 @@
 <component name="libraryTable">
   <library name="stetho-1.4.1">
     <ANNOTATIONS>
-      <root url="jar://$PROJECT_DIR$/stethocb/build/intermediates/exploded-aar/com.facebook.stetho/stetho/1.4.1/annotations.zip!/" />
-      <root url="jar://$PROJECT_DIR$/stethocb-sample/build/intermediates/exploded-aar/com.facebook.stetho/stetho/1.4.1/annotations.zip!/" />
+      <root url="jar://$PROJECT_DIR$/stetho-couchbase/build/intermediates/exploded-aar/com.facebook.stetho/stetho/1.4.1/annotations.zip!/" />
+      <root url="jar://$PROJECT_DIR$/stetho-couchbase-sample/build/intermediates/exploded-aar/com.facebook.stetho/stetho/1.4.1/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
-      <root url="file://$PROJECT_DIR$/stethocb/build/intermediates/exploded-aar/com.facebook.stetho/stetho/1.4.1/res" />
-      <root url="jar://$PROJECT_DIR$/stethocb/build/intermediates/exploded-aar/com.facebook.stetho/stetho/1.4.1/jars/classes.jar!/" />
+      <root url="jar://$PROJECT_DIR$/stetho-couchbase/build/intermediates/exploded-aar/com.facebook.stetho/stetho/1.4.1/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/stetho-couchbase/build/intermediates/exploded-aar/com.facebook.stetho/stetho/1.4.1/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

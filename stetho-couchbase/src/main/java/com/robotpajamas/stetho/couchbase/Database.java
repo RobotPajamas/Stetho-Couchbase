@@ -1,4 +1,4 @@
-package com.robotpajamas.stethocb;
+package com.robotpajamas.stetho.couchbase;
 
 import com.facebook.stetho.inspector.jsonrpc.JsonRpcPeer;
 import com.facebook.stetho.inspector.jsonrpc.JsonRpcResult;
