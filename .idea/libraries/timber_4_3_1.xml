@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="timber-4.3.1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/stetho-couchbase/build/intermediates/exploded-aar/com.jakewharton.timber/timber/4.3.1/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/stetho-couchbase/build/intermediates/exploded-aar/com.jakewharton.timber/timber/4.3.1/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jakewharton.timber/timber/4.3.1/34814ccb0d48cd59694ae6b6a42a12e7e5aa9fc9/timber-4.3.1-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jakewharton.timber/timber/4.3.1/34814ccb0d48cd59694ae6b6a42a12e7e5aa9fc9/timber-4.3.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Stetho-Couchbase.iml" filepath="$PROJECT_DIR$/Stetho-Couchbase.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stetho-couchbase/stetho-couchbase.iml" filepath="$PROJECT_DIR$/stetho-couchbase/stetho-couchbase.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stetho-couchbase-sample/stetho-couchbase-sample.iml" filepath="$PROJECT_DIR$/stetho-couchbase-sample/stetho-couchbase-sample.iml" />
+    </modules>
+  </component>
+</project>

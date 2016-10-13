@@ -1,0 +1,1 @@
+include ':stetho-couchbase-sample', ':stetho-couchbase'

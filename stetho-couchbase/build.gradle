@@ -1,0 +1,85 @@
+apply plugin: 'com.android.library'
+
+// Manifest version information
+def versionMajor = 0
+def versionMinor = 1
+def versionPatch = 0
+
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'stetho-couchbase'
+
+    publishedGroupId = 'com.robotpajamas.stetho'
+    libraryName = 'Stetho-Couchbase'
+    artifact = 'stetho-couchbase'
+
+    libraryDescription = 'Stetho-Couchbase is a plugin for Stetho to enable visualizing and debugging Android Couchbase databases in Chrome'
+
+    siteUrl = 'https://github.com/RobotPajamas/Stetho-Couchbase'
+    gitUrl = 'https://github.com/RobotPajamas/Stetho-Couchbase.git'
+
+    libraryVersion = "${versionMajor}.${versionMinor}.${versionPatch}"
+
+    developerId = 'sureshjoshi'
+    developerName = 'Suresh Joshi'
+    developerEmail = 'suresh@robotpajamas.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'me.tatarka:gradle-retrolambda:3.3.0'
+    }
+}
+
+
+apply plugin: 'me.tatarka.retrolambda'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "24.0.3"
+
+    defaultConfig {
+        minSdkVersion 9
+        targetSdkVersion 24
+        versionCode versionMajor * 10000 + versionMinor * 100 + versionPatch
+        versionName "${versionMajor}.${versionMinor}.${versionPatch}"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+dependencies {
+    compile 'com.android.support:support-annotations:24.2.1'
+    compile 'com.jakewharton.timber:timber:4.3.1'
+    provided 'com.facebook.stetho:stetho:1.4.1'
+    provided 'com.couchbase.lite:couchbase-lite-android:1.2.0'
+}
+
+// Raw Github returning a 500 error for the install file - made local
+//apply from: 'https://raw.githubusercontent.com/sureshjoshi/JCenter/master/installv1.gradle'
+//apply from: 'https://raw.githubusercontent.com/sureshjoshi/JCenter/master/bintrayv1.gradle'
+apply from: '../jcenter/installv1.gradle'
+apply from: '../jcenter/bintrayv1.gradle'
