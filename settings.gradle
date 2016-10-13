@@ -1,1 +1,1 @@
-include ':stethocb-sample', ':stethocb'
+include ':stetho-couchbase-sample', ':stetho-couchbase'
