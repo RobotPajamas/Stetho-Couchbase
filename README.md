@@ -19,11 +19,9 @@ public class MyApplication extends Application {
         }
     }
 }
+```
 
 You can either wrap Stetho in a BuildConfig.DEBUG statement, or use a more involved method as described [here](http://littlerobots.nl/blog/stetho-for-android-debug-builds-only/).
-
-
-```
 
 ## Download
 
