@@ -26,9 +26,8 @@ You can either wrap Stetho in a BuildConfig.DEBUG statement, or use a more invol
 ## Download
 
 ```groovy
-dependencies {
-    compile 'com.facebook.stetho:stetho:1.4.1'
-    compile 'com.robotpajamas.stetho:stetho-couchbase:0.1.0'
+compile 'com.facebook.stetho:stetho:1.4.1'
+compile 'com.robotpajamas.stetho:stetho-couchbase:0.1.0'
 ```
 
 ## License
