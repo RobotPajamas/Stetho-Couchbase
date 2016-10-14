@@ -26,20 +26,10 @@ You can either wrap Stetho in a BuildConfig.DEBUG statement, or use a more invol
 ## Download
 
 ```groovy
-repositories {
-    jcenter()
-    mavenCentral()
-    maven {
-        url 'https://dl.bintray.com/sureshjoshi/maven/'
-    }
-}
-
 dependencies {
     compile 'com.facebook.stetho:stetho:1.4.1'
     compile 'com.robotpajamas.stetho:stetho-couchbase:0.1.0'
 ```
-
-Note: The package is slowly propagating to JCenter - so right now, you'll need to add the extra Maven URL. When available on JCenter, this Readme will be updated.
 
 ## License
 
