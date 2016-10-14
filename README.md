@@ -39,6 +39,8 @@ dependencies {
     compile 'com.robotpajamas.stetho:stetho-couchbase:0.1.0'
 ```
 
+Note: The package is slowly propagating to JCenter - so right now, you'll need to add the extra Maven URL. When available on JCenter, this Readme will be updated.
+
 ## License
 
 The Apache License (Apache)
