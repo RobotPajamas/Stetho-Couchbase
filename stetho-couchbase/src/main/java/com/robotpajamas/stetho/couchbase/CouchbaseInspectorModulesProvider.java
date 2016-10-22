@@ -14,9 +14,11 @@ import timber.log.Timber;
 public class CouchbaseInspectorModulesProvider implements InspectorModulesProvider {
 
     private final Context mContext;
+    private final boolean mShowMetadata;
 
-    public CouchbaseInspectorModulesProvider(Context context) {
-        mContext = context;
+    CouchbaseInspectorModulesProvider(Builder builder) {
+        mContext = builder.context;
+        mShowMetadata = builder.showMetadata;
     }
 
     @Override
@@ -30,7 +32,33 @@ public class CouchbaseInspectorModulesProvider implements InspectorModulesProvid
             modules.add(domain);
         }
 
-        modules.add(new Database(new CouchbasePeerManager(mContext, mContext.getPackageName())));
+        modules.add(new Database(new CouchbasePeerManager(mContext, mContext.getPackageName(), mShowMetadata)));
         return modules;
     }
+
+    //region Builder
+
+    public static final class Builder {
+        private Context context;
+        private boolean showMetadata = true;
+
+        public Builder(Context context) {
+            if (context == null) {
+                throw new IllegalArgumentException("Context must not be null.");
+            }
+            this.context = context.getApplicationContext();
+        }
+
+        public Builder showMetadata(boolean showMetadata) {
+            this.showMetadata = showMetadata;
+            return this;
+        }
+
+        public CouchbaseInspectorModulesProvider build() {
+            return new CouchbaseInspectorModulesProvider(this);
+        }
+
+    }
+
+    //endregion
 }
