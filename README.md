@@ -13,9 +13,11 @@ public class MyApplication extends Application {
         if (BuildConfig.DEBUG) {
             Stetho.initialize(
                     Stetho.newInitializerBuilder(this)
-                            .enableDumpapp(Stetho.defaultDumperPluginsProvider(this))
-                            .enableWebKitInspector(new CouchbaseInspectorModulesProvider(this))
-                            .build());
+                        .enableDumpapp(Stetho.defaultDumperPluginsProvider(this))
+                        .enableWebKitInspector(new CouchbaseInspectorModulesProvider.Builder(this)
+                                .showMetadata(true) // Default: true
+                                .build())
+                        .build());
         }
     }
 }
@@ -27,7 +29,7 @@ You can either wrap Stetho in a BuildConfig.DEBUG statement, or use a more invol
 
 ```groovy
 compile 'com.facebook.stetho:stetho:1.4.1'
-compile 'com.robotpajamas.stetho:stetho-couchbase:0.1.0'
+compile 'com.robotpajamas.stetho:stetho-couchbase:0.2.0'
 ```
 
 ## License
