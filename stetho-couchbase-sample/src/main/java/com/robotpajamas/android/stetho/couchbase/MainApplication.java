@@ -29,7 +29,9 @@ public class MainApplication extends Application {
             Stetho.initialize(
                     Stetho.newInitializerBuilder(this)
                             .enableDumpapp(Stetho.defaultDumperPluginsProvider(this))
-                            .enableWebKitInspector(new CouchbaseInspectorModulesProvider(this))
+                            .enableWebKitInspector(new CouchbaseInspectorModulesProvider.Builder(this)
+                                    .showMetadata(true) // Default: true
+                                    .build())
                             .build());
         }
         initializeCouchbase(this);

@@ -41,12 +41,14 @@ class CouchbasePeerManager extends ChromePeerManager {
 
     private final String mPackageName;
     private final Context mContext;
+    private final boolean mShowMetadata;
 
     private Manager mManager;
 
-    CouchbasePeerManager(Context context, String packageName) {
+    CouchbasePeerManager(Context context, String packageName, boolean showMetadata) {
         mContext = context;
         mPackageName = packageName;
+        mShowMetadata = showMetadata;
 
         ManagerOptions managerOptions = new ManagerOptions();
         managerOptions.setReadOnly(true);
@@ -134,7 +136,11 @@ class CouchbasePeerManager extends ChromePeerManager {
         response.columnNames = COLUMN_NAMES;
         response.values = new ArrayList<>();
         for (Map.Entry<String, String> entry : map.entrySet()) {
-            response.values.add(entry.getKey());
+            final String key = entry.getKey();
+            if (!mShowMetadata && key.substring(0,1).equals("_")) {
+                continue;
+            }
+            response.values.add(key);
             response.values.add(entry.getValue());
         }
 
