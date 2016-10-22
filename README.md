@@ -13,11 +13,11 @@ public class MyApplication extends Application {
         if (BuildConfig.DEBUG) {
             Stetho.initialize(
                     Stetho.newInitializerBuilder(this)
-                        .enableDumpapp(Stetho.defaultDumperPluginsProvider(this))
-                        .enableWebKitInspector(new CouchbaseInspectorModulesProvider.Builder(this)
-                                .showMetadata(true) // Default: true
-                                .build())
-                        .build());
+                            .enableDumpapp(Stetho.defaultDumperPluginsProvider(this))
+                            .enableWebKitInspector(new CouchbaseInspectorModulesProvider.Builder(this)
+                                    .showMetadata(true) // Default: true
+                                    .build())
+                            .build());
         }
     }
 }
